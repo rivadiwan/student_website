@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+
+  await get_method("Admin");
+});
+
+ async function get_method(entity) {
+    event.preventDefault(); 
+    inputText = "riva.diwan@gmail.com";
+  pswd = "12345";
+  var query = inputText + "/" + pswd;
+  var geturl = 'https://dev142311.service-now.com/api/1108901/get_user/loginuser/' + query;
+  const base64Credentials = btoa('admin' + ':' + 'Test@4231');
+
+  try {
+    const response = await fetch(geturl, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': 'Basic ' + base64Credentials
+      }
+    });
+
+    console.log('Raw response:', response);
+
+    const data = await response.json();
+
+    console.log('GET request successful:', data);
+    // Process the response data here
+    
+    alert("Data fetched successfully: " + JSON.stringify(data));
+  } catch (error) {
+    console.error('GET request error:', error);
+    alert("Error fetching data: " + error.message);
+  }
+
+}
+
+    </script>
+    <body>
+        <div >
+            <form onsubmit="return get_method('Admin')">
+            <h3>SIGNUP</h3>
+            <label>Email:</label><br>
+            <input type="text" name="email"  id='text2'><br>
+            <label >Password:</label><br>
+            <input type="password"  name="Password" id="text3"><br><br>
+            <input type="submit" value="Submit">
+          </form>
+          </div>
+    </body>
+    </html>

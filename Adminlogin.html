@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+    
+    text-align:center;
+    background-image:url('login.jpg') ;
+}
+.form-container {
+    margin-top: 80px;
+    display: none;
+}
+
+#login-form:checked ~ #login-container,
+#signup-form:checked ~ #signup-container {
+    display: block;
+}
+</style>
+</head>
+<body>
+    <script src="Email_validation.js"></script> 
+    <script src="signup.js"></script> 
+    <h1>ADMIN LOGIN</h1>
+    <input type="radio" id="login-form" name="form-toggle" checked>
+    <input type="radio" id="signup-form" name="form-toggle">
+    <nav>
+        <label for="login-form">Login</label>
+        <label for="signup-form">Signup</label>
+    </nav>
+
+    <!--LOGIN FORM use get api to match the data-->
+    <div class="form-container" id="login-container">
+        <form onsubmit="return ValidateEmail('Admin')">
+            <h3>LOGIN</h3>
+            <label>Email:</label><br>
+            <input type="text" name="emailLogin" required id='text2'><br>
+            <label>Password:</label><br>
+            <input type="password" name="passwordLogin" required id="text3"><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <div class="form-container" id="signup-container">
+        <form onsubmit="return checksignup('Admin')">
+        <h3>SIGNUP</h3>
+        <label>NAME:</label><br>
+        <input type="text" name="namel" required id='text1'><br>
+        <label>Email:</label><br>
+        <input type="text" name="email" required id='text4'><br>
+        <label >Password:</label><br>
+        <input type="password"  name="Password" required id="text5"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+      </div>
+    
+     
+</body>
+</html>

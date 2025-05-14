@@ -1,0 +1,94 @@
+<!--<html>
+    <head>
+        <style>
+            body{
+                text-align:center;
+            }
+            label {
+                display: inline-block;
+                width: 150px;
+                text-align: right;
+              }
+        </style>
+        </head>
+    <body>
+        <h2>ADD STUDENT DETAILS</h2>
+<div style='margin-top:60px'>
+    <form>
+        <label>NAME:</label>
+        <input type="text" required><br><br>
+        <label>:</label>
+        <input type="text" required><br><br>
+        <label>FATHER'S NAME:</label>
+        <input type="text" required><br><br>
+        <label>ATTENDANCE:</label>
+        <input type="number" required><br><br>
+        <label>EMAIL:</label>
+        <input type="email" required><br><br><br>
+        <input type="submit" value="ADD STUDENT" class="right">
+      </form>
+      </div>
+    </body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    text-align: center;
+    background-image: url('login.jpg');
+}
+
+.form-container {
+    margin-top: 80px;
+    display: none;
+}
+
+#login-form:checked ~ #login-container,
+#signup-form:checked ~ #signup-container {
+    display: block;
+}
+
+</style>
+</head>
+<body>
+    <h1>ADMIN LOGIN</h1>
+    
+    <input type="radio" id="login-form" name="form-toggle" checked>
+    <input type="radio" id="signup-form" name="form-toggle">
+    <nav>
+        <label for="login-form">Login</label>
+        <label for="signup-form">Signup</label>
+    </nav>
+    
+    <!-- Login Form -->
+    <div class="form-container" id="login-container">
+        <form action="dashboard.html" onsubmit="return ValidateLogin('Admin')">
+            <h3>LOGIN</h3>
+            <label>Email:</label><br>
+            <input type="text" name="emailLogin" required id='text4'><br>
+            <label>Password:</label><br>
+            <input type="password" name="passwordLogin" required id="text5"><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    
+    <!-- Signup Form -->
+    <div class="form-container" id="signup-container">
+        <form action="admindashboard.html" onsubmit="return ValidateEmail('Admin')">
+            <h3>SIGNUP</h3>
+            <label>NAME:</label><br>
+            <input type="text" name="namel" required id='text1'><br>
+            <label>Email:</label><br>
+            <input type="text" name="email" required id='text2'><br>
+            <label>Password:</label><br>
+            <input type="password" name="Password" required id="text3"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+    <script src="Email_validation.js"></script>
+</body>
+</html>
+

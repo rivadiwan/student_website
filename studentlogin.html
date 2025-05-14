@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+    text-align:center;
+    background-image:url('login.jpg') ;
+}
+
+
+</style>
+</head>
+<body>
+    <h1>Student Login</h1>
+    <div style='margin-top:80px'>
+    <form  onsubmit="return ValidateEmail('Student')">
+       
+        <label>Email:</label><br>
+        <input type="text" name="email" required id='text2'><br>
+        <label >Password:</label><br>
+        <input type="password"  name="Password" required id='text3'><br><br>
+        <input type="submit" value="Submit">
+      </form>
+      </div>
+    
+    <script src="Email_validation.js"></script>  
+</body>
+</html>

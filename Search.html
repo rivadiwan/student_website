@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        text-align:center;
+    }
+</style>
+</head>
+ <body>
+    <script src="studentdisplay.js"></script>
+<h2>SEARCH STUDENT ROLL NUMBER</h2>
+<div style='margin-top:80px'>
+    <form onsubmit="getStudent()">
+        <label>Enter Roll Number:</label><br>
+        <input type="text" required id="gdetail1"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+      <div id="resultContainer" style="margin-top: 20px; display: none;">
+        <h3>Student Information:</h3>
+        <p id="studentInfo"></p>
+    </div>
+</div>
+</body>
+</html>
+
+    
